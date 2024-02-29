@@ -5,6 +5,9 @@ import { ClerkProvider, SignedIn, SignedOut } from "@clerk/clerk-expo";
 import * as SecureStore from "expo-secure-store";
 import { NavigationContainer } from "@react-navigation/native";
 import TabNavigation from "./App/Navigations/TabNavigation";
+import { useFonts } from 'expo-font';
+
+
 const tokenCache = {
   async getToken(key: string) {
     try {
@@ -23,6 +26,11 @@ const tokenCache = {
 };
 
 export default function App() {
+  const [fontsLoaded, fontError] = useFonts({
+    'outfit': require('./assets/Outfit/static/Outfit-Regular.ttf'),
+    'outfit-mid': require('./assets/Outfit/static/Outfit-Medium.ttf'),
+    'outfit-bold': require('./assets/Outfit/static/Outfit-Bold.ttf'),
+  });
   return (
     <ClerkProvider
     
