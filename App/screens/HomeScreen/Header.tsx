@@ -36,7 +36,7 @@ export default function Header() {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    paddingTop: 20,
+    paddingTop: 10,
     backgroundColor: "#9932cc",
     borderBottomEndRadius: 30,
     borderBottomStartRadius: 30,
@@ -61,15 +61,13 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     padding: 10,
     borderRadius: 10,
-    marginTop: 20,
+    marginTop: 10,
     marginBottom: 20,
     width: '85%',
   },
     searchbarContainer: {
-        marginTop: 20,
         flexDirection: 'row',
         gap: 10,
-        marginBottom:10
     },
     searchBtn:{
         backgroundColor:"#ffffff",
