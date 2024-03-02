@@ -8,16 +8,18 @@ import BusinessList from "./BusinessList";
 export default function HomeScreen() {
   return (
     <View>
-      <Header />
-      <View style={{ padding: 10 }}>
-        <Slider />
-      </View>
-      <View style={{ padding: 10 }}>
-        <Categories />
-      </View>
-      <View style={{padding:10}}>
-        <BusinessList />
-      </View>
+      <ScrollView>
+        <Header />
+        <View style={{ padding: 10 }}>
+          <Slider />
+        </View>
+        <View style={{ padding: 10 }}>
+          <Categories />
+        </View>
+        <View style={{ padding: 10 }}>
+          <BusinessList />
+        </View>
+      </ScrollView>
     </View>
   );
 }

@@ -29,14 +29,14 @@ export default function BusinessListByCategoryScreen() {
         <Text style={styles.categoryName}>{param?.category}</Text>
       </TouchableOpacity>
 
-      <FlatList
+     {businessList?.length>0?<FlatList
       data={businessList}
         renderItem={({item,index})=>(
             <View>
                 <BusinessListItem business={item} />
             </View>
         )}
-      />
+      />:<Text style={{fontFamily:'outfit-mid',color:'gray',fontSize:20,textAlign:'center',marginTop:'20%'}}>No Business Found</Text>}
     </View>
   );
 }
