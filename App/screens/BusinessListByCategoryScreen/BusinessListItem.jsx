@@ -6,8 +6,9 @@ import { useNavigation } from "@react-navigation/native";
 export default function BusinessListItem({ business }) {
   const navigation = useNavigation();
   return (
-    <TouchableOpacity style={styles.container}
-    onPress={()=>navigation.push('business-detail',{business:business})}
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => navigation.push("business-detail", { business: business })}
     >
       <Image
         source={{ uri: business?.images[0]?.url }}
@@ -16,7 +17,7 @@ export default function BusinessListItem({ business }) {
       <View style={styles.subContainer}>
         <Text style={styles.contactPerson}>{business.contactPerson}</Text>
         <Text style={styles.name}>{business.name}</Text>
-        <View style={{flexDirection:"row",gap:5}}>
+        <View style={{ flexDirection: "row", gap: 5 }}>
           <FontAwesome6 name="location-dot" size={20} color="#9932cc" />
           <Text style={styles.address}>{business.address}</Text>
         </View>

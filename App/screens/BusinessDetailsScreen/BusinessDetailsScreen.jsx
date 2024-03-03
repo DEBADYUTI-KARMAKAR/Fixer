@@ -1,8 +1,13 @@
 import {
+  FlatList,
   Image,
+  KeyboardAvoidingView,
+  Modal,
   ScrollView,
   StyleSheet,
   Text,
+  TextInput,
+  ToastAndroid,
   TouchableOpacity,
   View,
 } from "react-native";
@@ -12,15 +17,22 @@ import { Ionicons } from "@expo/vector-icons";
 import { FontAwesome6 } from "@expo/vector-icons";
 import Heading from "../../Components/Heading";
 import BusinessPhotos from "./BusinessPhotos";
+import BookingModel from "./BookingModel";
+
 
 export default function BusinessDetailsScreen() {
   const param = useRoute().params;
   const navigation = useNavigation();
   const [business, setBusiness] = useState(param?.business);
   const [isReadmore, setReadMore] = useState(false);
+  const [showModel, setShowModel] = useState(false);
+  
   useEffect(() => {
     console.log(param?.business);
   }, [param]);
+
+  
+
   return (
     <View style={{ margin: 20 }}>
       <ScrollView
@@ -72,7 +84,10 @@ export default function BusinessDetailsScreen() {
       </ScrollView>
 
       <View style={styles.btn}>
-        <TouchableOpacity style={styles.bookBtn}>
+        <TouchableOpacity
+          style={styles.bookBtn}
+          onPress={() => setShowModel(true)}
+        >
           <Text style={{ color: "white", fontSize: 18, fontFamily: "outfit" }}>
             Book Now
           </Text>
@@ -85,6 +100,8 @@ export default function BusinessDetailsScreen() {
           </Text>
         </TouchableOpacity>
       </View>
+    <BookingModel businessId={business.id} visible={showModel} hideModal={()=>setShowModel(false)}/>
+        
     </View>
   );
 }
@@ -174,4 +191,5 @@ const styles = StyleSheet.create({
     borderColor: "#9932cc",
     marginBottom: 80,
   },
+  
 });

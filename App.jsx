@@ -5,18 +5,17 @@ import { ClerkProvider, SignedIn, SignedOut } from "@clerk/clerk-expo";
 import * as SecureStore from "expo-secure-store";
 import { NavigationContainer } from "@react-navigation/native";
 import TabNavigation from "./App/Navigations/TabNavigation";
-import { useFonts } from 'expo-font';
-
+import { useFonts } from "expo-font";
 
 const tokenCache = {
-  async getToken(key: string) {
+  async getToken(key) {
     try {
       return SecureStore.getItemAsync(key);
     } catch (err) {
       return null;
     }
   },
-  async saveToken(key: string, value: string) {
+  async saveToken(key, value) {
     try {
       return SecureStore.setItemAsync(key, value);
     } catch (err) {
@@ -27,19 +26,19 @@ const tokenCache = {
 
 export default function App() {
   const [fontsLoaded, fontError] = useFonts({
-    'outfit': require('./assets/Outfit/static/Outfit-Regular.ttf'),
-    'outfit-mid': require('./assets/Outfit/static/Outfit-Medium.ttf'),
-    'outfit-bold': require('./assets/Outfit/static/Outfit-Bold.ttf'),
+    outfit: require("./assets/Outfit/static/Outfit-Regular.ttf"),
+    "outfit-mid": require("./assets/Outfit/static/Outfit-Medium.ttf"),
+    "outfit-bold": require("./assets/Outfit/static/Outfit-Bold.ttf"),
   });
   return (
     <ClerkProvider
-    
-    tokenCache={tokenCache}
-    publishableKey="pk_test_dG91Y2hlZC1ib2JjYXQtMzUuY2xlcmsuYWNjb3VudHMuZGV2JA">
+      tokenCache={tokenCache}
+      publishableKey="pk_test_dG91Y2hlZC1ib2JjYXQtMzUuY2xlcmsuYWNjb3VudHMuZGV2JA"
+    >
       <View style={styles.container}>
         <SignedIn>
           <NavigationContainer>
-            <TabNavigation  />
+            <TabNavigation />
           </NavigationContainer>
         </SignedIn>
         <SignedOut>

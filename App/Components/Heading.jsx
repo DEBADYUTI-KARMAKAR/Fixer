@@ -1,13 +1,15 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-export default function Heading({text,isViewAll=false,viewAllText="View All"}) {
+export default function Heading({
+  text,
+  isViewAll = false,
+  viewAllText = "View All",
+}) {
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>{text}</Text>
-      {
-        isViewAll && <Text>{viewAllText}</Text>
-      }
+      {isViewAll && <Text>{viewAllText}</Text>}
     </View>
   );
 }
@@ -18,9 +20,9 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginBottom: 10,
   },
-  container:{
-    flexDirection:'row',
-    justifyContent:'space-between',
-    alignItems:'center'
-  }
+  container: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
 });

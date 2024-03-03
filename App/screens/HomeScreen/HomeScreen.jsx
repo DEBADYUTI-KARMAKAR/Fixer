@@ -1,4 +1,5 @@
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+import { ScrollView } from 'react-native-virtualized-view'
 import React from "react";
 import Header from "./Header";
 import Slider from "./Slider";

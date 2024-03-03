@@ -11,23 +11,31 @@ export default function Header() {
         <View style={styles.userData}>
           <Image source={{ uri: user?.imageUrl }} style={styles.userImage} />
           <View>
-            <Text style={{ color: "white",fontFamily:'outfit' }}>Welcome,</Text>
-            <Text style={{ color: "white", fontSize: 22,fontFamily:'outfit-bold' }}>
+            <Text style={{ color: "white", fontFamily: "outfit" }}>
+              Welcome,
+            </Text>
+            <Text
+              style={{
+                color: "white",
+                fontSize: 22,
+                fontFamily: "outfit-bold",
+              }}
+            >
               {user?.fullName}
             </Text>
           </View>
         </View>
         <FontAwesome name="bookmark-o" size={24} color="#ffffff" />
       </View>
-        {/* Search bar */}
+      {/* Search bar */}
       <View style={styles.searchbarContainer}>
-        <TextInput
-          style={styles.input}
-          placeholder="Search"
+        <TextInput style={styles.input} placeholder="Search" />
+        <FontAwesome
+          name="search"
+          size={24}
+          style={styles.searchBtn}
+          color="black"
         />
-        <FontAwesome name="search" size={24}
-        style={styles.searchBtn}
-        color="black" />
       </View>
     </View>
   );
@@ -57,23 +65,23 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
   },
-  input:{
-    backgroundColor: 'white',
+  input: {
+    backgroundColor: "white",
     padding: 10,
     borderRadius: 10,
     marginTop: 10,
     marginBottom: 20,
-    width: '85%',
+    width: "85%",
   },
-    searchbarContainer: {
-        flexDirection: 'row',
-        gap: 10,
-    },
-    searchBtn:{
-        backgroundColor:"#ffffff",
-        padding: 10,
-        borderRadius: 10,
-        marginTop: 20,
-        marginBottom: 20,
-    }
+  searchbarContainer: {
+    flexDirection: "row",
+    gap: 10,
+  },
+  searchBtn: {
+    backgroundColor: "#ffffff",
+    padding: 10,
+    borderRadius: 10,
+    marginTop: 20,
+    marginBottom: 20,
+  },
 });
