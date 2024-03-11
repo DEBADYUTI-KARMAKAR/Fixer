@@ -11,12 +11,12 @@ export default function Header() {
         <View style={styles.userData}>
           <Image source={{ uri: user?.imageUrl }} style={styles.userImage} />
           <View>
-            <Text style={{ color: "white", fontFamily: "outfit" }}>
+            <Text style={{ color: "black", fontFamily: "outfit-bold",opacity:0.5 }}>
               Welcome,
             </Text>
             <Text
               style={{
-                color: "white",
+                color: "black",
                 fontSize: 22,
                 fontFamily: "outfit-bold",
               }}
@@ -25,7 +25,7 @@ export default function Header() {
             </Text>
           </View>
         </View>
-        <FontAwesome name="bookmark-o" size={24} color="#ffffff" />
+        <FontAwesome name="bookmark-o" size={24} color="black" />
       </View>
       {/* Search bar */}
       <View style={styles.searchbarContainer}>
@@ -34,7 +34,7 @@ export default function Header() {
           name="search"
           size={24}
           style={styles.searchBtn}
-          color="black"
+          color="#ffffff"
         />
       </View>
     </View>
@@ -44,8 +44,7 @@ export default function Header() {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    paddingTop: 10,
-    backgroundColor: "#9932cc",
+    paddingTop: 20,
     borderBottomEndRadius: 30,
     borderBottomStartRadius: 30,
   },
@@ -69,7 +68,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     padding: 10,
     borderRadius: 10,
-    marginTop: 10,
+    marginTop: 20,
     marginBottom: 20,
     width: "85%",
   },
@@ -78,7 +77,7 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   searchBtn: {
-    backgroundColor: "#ffffff",
+    backgroundColor: "#9932cc",
     padding: 10,
     borderRadius: 10,
     marginTop: 20,

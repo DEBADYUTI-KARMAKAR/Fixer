@@ -2,6 +2,7 @@ import {
   FlatList,
   Image,
   KeyboardAvoidingView,
+  Linking,
   Modal,
   ScrollView,
   StyleSheet,
@@ -31,6 +32,10 @@ export default function BusinessDetailsScreen() {
     console.log(param?.business);
   }, [param]);
 
+  const onMessageBtnClick=()=>{
+    Linking.openURL(`mailto:${business?.email}?subject=Enquiry&body=Hello ${business?.contactPerson}, I am interested in your services. Please provide me more details.`)
+
+  }
   
 
   return (
@@ -92,7 +97,9 @@ export default function BusinessDetailsScreen() {
             Book Now
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.contactBtn}>
+        <TouchableOpacity style={styles.contactBtn}
+        onPress={()=>onMessageBtnClick()}
+        >
           <Text
             style={{ color: "#9932cc", fontSize: 18, fontFamily: "outfit" }}
           >

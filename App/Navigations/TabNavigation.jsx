@@ -32,7 +32,7 @@ export default function TabNavigation() {
         component={BookingScreen}
         options={{
           tabBarLabel: ({ color }) => (
-            <Text style={styles.homeText}>Service</Text>
+            <Text style={styles.homeText}>Booking</Text>
           ),
           tabBarIcon: ({ color, size }) => (
             <MaterialIcons

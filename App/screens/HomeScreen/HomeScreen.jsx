@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import { ScrollView } from 'react-native-virtualized-view'
 import React from "react";
 import Header from "./Header";
@@ -8,7 +8,7 @@ import BusinessList from "./BusinessList";
 
 export default function HomeScreen() {
   return (
-    <View>
+    <SafeAreaView>
       <ScrollView>
         <Header />
         <View style={{ padding: 10 }}>
@@ -21,7 +21,7 @@ export default function HomeScreen() {
           <BusinessList />
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 }
 
