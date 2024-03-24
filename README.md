@@ -1,7 +1,7 @@
 # Home-Office-Service-App
-# H-O-Service
+# Fixer
 
-Say goodbye to endless phone calls and scrambling for reliable service providers. H-O Service is your one-stop shop for booking a variety of services to keep your home and workspace running smoothly.
+Say goodbye to endless phone calls and scrambling for reliable service providers. Fixer is your one-stop shop for booking a variety of services to keep your home and workspace running smoothly.
 
 # Services
   1.Cleaning.
